@@ -55,13 +55,14 @@
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     
                     
-                    
+                    {% comment %} Reverse the order so that the ltest is on top using 'reverse' {% endcomment %}
                     {% for post in posts reversed %}
 
                     <!-- Post preview-->
                     <div class="post-preview">
                         <a href="/posts/{{post.id}}">
                             <h2 class="post-title">{{post.title}}</h2>
+                            {% comment %} Only choose 13 characters to display {% endcomment %}
                             <h3 class="post-subtitle">{{post.body|truncatewords:13}}</h3>
                         </a>
                         <p class="post-meta">
