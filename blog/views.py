@@ -5,6 +5,9 @@ from .models import PostModel
 
 
 def home(request):
+
+    # Get all data and sort by create_at (the lamda function)
+
     posts_list = sorted(list(PostModel.objects.all()),
                         key=lambda p: p.created_at)
     return render(request, 'index.html', {'posts': posts_list})
